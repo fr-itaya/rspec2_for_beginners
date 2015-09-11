@@ -1,9 +1,7 @@
 require_relative 'message_filter'
 
 describe MessageFilter, 'with argument "foo"' do
-  before do
-    @filter = MessageFilter.new('foo')
-  end
-  it { @filter.should be_detect('hello from foo') }
-  it { @filter.should_not be_detect('hello world!') }
+  subject { MessageFilter.new('foo') }
+  it { should be_detect('hello from foo') }
+  it { should_not be_detect('hello world!') }
 end
